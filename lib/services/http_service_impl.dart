@@ -10,15 +10,15 @@ class HttpServiceImpl implements HttpService{
   Dio? _dio;
   @override
   Future getRequest(String url) async {
-    Response response;
     try {
-       response = _dio?.get(url) as Response;
+       var response = _dio?.get(url);
+        
+       return response;
     } on DioError catch (e) {
         print(e);
         throw Exception(e.message);
     }
 
-    return response;
   }
   initializeInterceptors() {
     _dio?.interceptors.add(InterceptorsWrapper(

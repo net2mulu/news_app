@@ -1,7 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:news_app/core/model/article.dart';
-import 'package:json_serializable/builder.dart';
-import 'package:json_serializable/json_serializable.dart';
 
 part 'news_responce_model.g.dart';
 
@@ -14,7 +12,7 @@ class NewsResponce {
   String? status;
 
   @JsonKey(name: "totalResults")
-  String? totalResults;
+  int? totalResults;
 
   @JsonKey(name: "articles")
   late List<Article> articles;

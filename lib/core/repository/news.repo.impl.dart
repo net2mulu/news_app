@@ -21,7 +21,7 @@ class NewsRepoImpl implements NewsRepo {
     try{
         final response = await _httpService?.getRequest("/v2/top-headlines?country=us");
         final parsedResponce = NewsResponce.fromJson(response.data);
-        return parsedResponce.articles;
+        return parsedResponce.articles; 
     } on Exception catch (e){
         print(e);
         return null;
